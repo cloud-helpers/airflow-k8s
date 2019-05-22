@@ -25,4 +25,5 @@ jobs:
 
         # Set KUBECONFIG environment variable
         - export KUBECONFIG="$(kind get kubeconfig-path)"
-      script: make test-integration
+      script: ./ci-scripts/integration_tests.sh
+
