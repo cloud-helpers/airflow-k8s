@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: scheduler
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: airflow
+        tier: scheduler
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: scheduler
+        image: ooverandout/airflow-k8s:fourth
+        # volumes:
+        #     - /localpath/to/dags:/usr/local/airflow/dags
+        env:
+        - name: AIRFLOW_HOME
+          value: "/usr/local/airflow"
+        args: ["scheduler"]

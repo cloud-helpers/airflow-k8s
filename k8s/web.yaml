@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: airflow
+        tier: web
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: web
+        image: ooverandout/airflow-k8s:fourth
+        env:
+        - name: AIRFLOW_HOME
+          value: "/usr/local/airflow"
+        ports:
+        - name: web
+          containerPort: 8080
+        args: ["webserver"]
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 240
+          periodSeconds: 60
