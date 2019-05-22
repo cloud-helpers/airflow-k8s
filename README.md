@@ -25,7 +25,7 @@ $ popd
 ```
 
 * After ~30 seconds run the airflow webserver:
-````bash
+```bash
 $ kubectl service web
 ```
 
