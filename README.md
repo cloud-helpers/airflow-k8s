@@ -30,7 +30,7 @@ $ popd
 
 * After ~30 seconds run the airflow webserver:
 ```bash
-$ kubectl service web
+$ minikube service web
 ```
 
 * Then manually trigger a DAG - it will not finish.
