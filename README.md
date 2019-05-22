@@ -15,13 +15,20 @@ In order to recreate the issue:
 
 *  Install [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 *  Run this code:
+```bash
+$ mkdir -p ~/dev/infra
+$ git clone https://github.com/cloud-helpers/airflow-k8s ~/dev/infra/airflow-k8s
+$ pushd ~/dev/infra/airflow-k8s
+$ minikube start
+$ kubectl apply -f k8s
+$ popd
 ```
-git clone git@git.signintra.com:ADMROZIK/airflow-k8s.git && cd airflow-k8s
-minikube start
-kubectl apply -f k8s
+
+* After ~30 seconds run the airflow webserver:
+```bash
+$ kubectl service web
 ```
-*  after ~30 seconds run the airflow webserver:
 
-`kubectl service web`
+* Then manually trigger a DAG - it will not finish.
 
-*  Then manually trigger a DAG - it will not finish.
+
