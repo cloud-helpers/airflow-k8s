@@ -13,7 +13,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: web
-        image: ooverandout/airflow-k8s:fourth
+        image: quay.io/cloudhelpers/airflow-k8s:latest
         env:
         - name: AIRFLOW_HOME
           value: "/usr/local/airflow"
@@ -27,3 +27,4 @@ spec:
             port: 8080
           initialDelaySeconds: 240
           periodSeconds: 60
+

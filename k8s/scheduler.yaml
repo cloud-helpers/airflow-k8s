@@ -13,10 +13,11 @@ spec:
       restartPolicy: Always
       containers:
       - name: scheduler
-        image: ooverandout/airflow-k8s:fourth
+        image: quay.io/cloudhelpers/airflow-k8s:latest
         # volumes:
         #     - /localpath/to/dags:/usr/local/airflow/dags
         env:
         - name: AIRFLOW_HOME
           value: "/usr/local/airflow"
         args: ["scheduler"]
+
