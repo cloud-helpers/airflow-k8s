@@ -2,6 +2,7 @@ Airflow k8s
 ===========
 
 [![Build Status](https://travis-ci.com/cloud-helpers/airflow-k8s.svg?branch=master)](https://travis-ci.com/cloud-helpers/airflow-k8s)
+[![Docker Repository on Quay](https://quay.io/repository/cloudhelpers/airflow-k8s/status "Docker Repository on Quay")](https://quay.io/repository/cloudhelpers/airflow-k8s)
 
 Docker image is using entrypoint.sh at the beginning to run webserver/scheduler
 properly.
